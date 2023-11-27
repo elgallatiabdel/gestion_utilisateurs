@@ -6,6 +6,7 @@ const RegisterRoute = require('./routes/RegisterRoute');
 const url = "mongodb://127.0.0.1:27017/preparations";
 const session = require("express-session");
 
+
 const methodOverride = require("method-override");
 app.use(methodOverride("_method"));
 
@@ -28,7 +29,7 @@ app.use('/users',UserRoute);
 app.use('/register',RegisterRoute);
 
 app.get('/',(req, res) => {
-  res.redirect('/users');
+  res.render('dashboard');
 })
 
 mongoose

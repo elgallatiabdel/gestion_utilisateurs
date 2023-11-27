@@ -25,11 +25,18 @@ html(lang="en")
       div(class="container mt-5")
         form(action="/users/add", method="post") 
           div(class="mb-3")
-            label(class="form-label",for="nom") Nom: 
-            input(class="form-control",type="text", name="nom") 
+            label(class="form-label",for="nom_complet") Nom complete: 
+            input(class="form-control",type="text", name="nom_complet") 
+          div(class="mb-3") 
+            label(class="form-label",for="age") Age: 
+            input(class="form-control",type="age", name="age")
+          div(class="mb-3")
+            label(class="form-label",for="phone") Numéro de telephone: 
+            input(class="form-control",type="text", name="phone") 
           div(class="mb-3") 
             label(class="form-label",for="email") Email: 
             input(class="form-control",type="email", name="email")
+            input(class="form-control",type="hidden", name="user_id" value=`${user_session._id}`)
           .col-sm-16.text-center
             input(class="btn btn-primary", type="submit", value="Ajouter" , style="width: 50%;")
 

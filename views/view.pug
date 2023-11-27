@@ -21,8 +21,14 @@ html(lang="en")
       if user
         table(class="table table-striped", style="margin-top:50px") 
             tr  
-              th(scope="row",style="text-align: center;") Nom 
-              td(scope="row",style="text-align: center;") #{user.nom}
+              th(scope="row",style="text-align: center;") Nom complet
+              td(scope="row",style="text-align: center;") #{user.nom_complet}
+            tr  
+              th(scope="row",style="text-align: center;") Age 
+              td(scope="row",style="text-align: center;") #{user.age}
+            tr  
+              th(scope="row",style="text-align: center;") Numéro de téléphone 
+              td(scope="row",style="text-align: center;") #{user.phone}
             tr  
               th(scope="row",style="text-align: center;") Email 
               td(scope="row",style="text-align: center;") #{user.email}

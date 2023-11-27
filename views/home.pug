@@ -24,12 +24,16 @@ html(lang="en")
             thead 
               tr  
                 th(scope="row") Nom 
+                th(scope="row") Age 
+                th(scope="row") Numéro de telephone 
                 th(scope="row") Email 
                 th(scope="row", colspan="3") Actions 
             tbody 
               each user in users
                 tr 
-                  td #{user.nom}
+                  td #{user.nom_complet}
+                  td #{user.age}
+                  td #{user.phone}
                   td #{user.email}
                   td 
                     a(data-bs-toggle="tooltip", data-bs-title="View details", data-bs-placement="top", class="btn btn-primary btn-sm", href=`/users/view/${user._id}`) view
@@ -61,12 +65,16 @@ html(lang="en")
             thead 
               tr  
                 th(scope="row") Nom 
+                th(scope="row") Age 
+                th(scope="row") Numéro de telephone 
                 th(scope="row") Email 
                 th(scope="row", colspan="3") Actions 
             tbody 
               each user in users
                 tr 
-                  td #{user.nom}
+                  td #{user.nom_complet}
+                  td #{user.age}
+                  td #{user.phone}
                   td #{user.email}
                   td 
                     a(data-bs-toggle="tooltip", data-bs-title="View details", data-bs-placement="top", class="btn btn-primary btn-sm", href="/register/login") view

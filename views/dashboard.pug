@@ -1,0 +1,47 @@
+html
+  head
+    title Dashboard
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css')
+    style.
+      body {
+        padding: 120px;
+      }
+      .dashboard-container {
+        max-width: 90%;
+        height: auto;
+        margin: auto;
+        background-color: #f8f9fa;
+        padding: 100px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h2 {
+        color: #007bff;
+      }
+      .description {
+        margin-bottom: 20px;
+        color: #6c757d;
+        font-size: 40px;
+      }
+      .btn-container {
+        margin-top: 45px;
+      }
+
+  body
+    .dashboard-container
+      h2.text-center Dashboard
+      .description.text-center
+        p Bienvenue sur notre site de gestion d'utilisateurs. Connectez-vous ou inscrivez-vous pour commencer.
+      .btn-container.text-center
+        if user
+          .row.align-items-center
+            div(class="col-sm-6")
+              a.btn.btn-primary(href='/register/users/', role='button', style='width:50%') Accéder à la page d'accueil
+            div(class="col-sm-6")
+              a.btn.btn-primary(href='/register/logout', role='button', style='width:50%') Se déconnecter
+        else
+          .row.align-items-center
+            div(class="col-sm-6")
+              a.btn.btn-primary(href='/register/login', role='button', style='width:50%') Se connecter
+            div(class="col-sm-6")
+              a.btn.btn-primary(href='/register', role='button', style='width:50%') S'inscrire
