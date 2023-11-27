@@ -1,0 +1,45 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel='stylesheet', href='/css/bootstrap.min.css')
+    title View User
+  body 
+    if user_session
+      .header
+        .container-fluid.bg-dark.text-white.py-3
+          .row.align-items-center
+            .col-sm-3
+              a(href="/users/", class="btn btn-primary" , style="width: 45%;") Home
+            .col-sm-6.text-center
+              h1.mb-0.center Les informations de l'utilisateur
+            .col-sm-3.text-end
+              a(href="/register/logout", class="btn btn-primary" , style="width: 45%;") Logout
+
+
+      if user
+        table(class="table table-striped", style="margin-top:50px") 
+            tr  
+              th(scope="row",style="text-align: center;") Nom 
+              td(scope="row",style="text-align: center;") #{user.nom}
+            tr  
+              th(scope="row",style="text-align: center;") Email 
+              td(scope="row",style="text-align: center;") #{user.email}
+      else 
+        h1 il n'existe aucun utilisateur 
+    
+    else 
+      .header
+        .container-fluid.bg-dark.text-white.py-3
+          .row.align-items-center
+            .col-sm-3
+              a(href="/users/", class="btn btn-primary" , style="width: 45%;") Home
+            .col-sm-6.center
+              h1.mb-0 Les information d'utilisateur
+            .col-sm-3.text-end
+              a(href="/register/login", class="btn btn-primary" , style="width: 45%;") Login 
+
+      h1(style="color:#000") Vous n'avez pas l'accées pour voir les informations d'un utilisateur
+
+    script(src='/js/bootstrap.bundle.min.js') 

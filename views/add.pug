@@ -1,0 +1,51 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel='stylesheet', href='/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/css/add.css') 
+    title Ajoute d'utilisateur
+  body 
+
+
+    if user_session
+      .header
+        .container-fluid.bg-dark.text-white.py-3
+          .row.align-items-center
+            .col-sm-4
+              a(href="/users/", class="btn btn-primary" , style="width: 45%;") Home
+            .col-sm-4.center
+              h1.mb-0.center Ajoute d'utilisateur
+            .col-sm-4.text-end
+              a(href="/register/logout", class="btn btn-primary", style="width: 45%;") Logout
+    
+
+            
+      div(class="container mt-5")
+        form(action="/users/add", method="post") 
+          div(class="mb-3")
+            label(class="form-label",for="nom") Nom: 
+            input(class="form-control",type="text", name="nom") 
+          div(class="mb-3") 
+            label(class="form-label",for="email") Email: 
+            input(class="form-control",type="email", name="email")
+          .col-sm-16.text-center
+            input(class="btn btn-primary", type="submit", value="Ajouter" , style="width: 50%;")
+
+        
+
+    else 
+      .header
+        .container-fluid.bg-dark.text-white.py-3
+          .row.align-items-center
+            .col-sm-3
+              a(href="/users/", class="btn btn-primary" , style="width: 45%;") Home
+            .col-sm-6.center
+              h1.mb-0 Ajoute d'utilisateur
+            .col-sm-3.text-end
+              a(href="/register/login", class="btn btn-primary" , style="width: 45%;") Login 
+
+      h1(style="color:#000") Vous n'avez pas l'accées pour ajouter un utilisateur
+
+    script(src='/js/bootstrap.bundle.min.js') 

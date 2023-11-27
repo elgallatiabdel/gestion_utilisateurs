@@ -1,0 +1,29 @@
+/* public/css/style.css */
+
+/* body {
+  padding-top: 60px; /* Pour éviter que le contenu ne soit caché derrière la barre de navigation Bootstrap 
+}*/
+
+/* .header {
+  background-color: #343a40;
+  padding: 10px 0;
+}
+
+.header a {
+  color: #ffffff;
+  margin-right: 10px;
+} */
+
+table {
+  margin-top: 50px;
+}
+
+.table th, .table td {
+  text-align: center;
+}
+
+.no-users {
+  margin-top: 20px;
+}
+
+/* Ajoutez d'autres styles personnalisés au besoin */
